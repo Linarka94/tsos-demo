@@ -1,0 +1,45 @@
+$font: 'Golos', 'Helvetica', sans-serif;
+$transition: all 0.3s ease;
+$base: #222222;
+$placeholder: #949494;
+$white: #FFFFFF;
+
+$prim: #0D6EFD;
+$prim-hover: #1760E5;
+$prim-active: #1045A6;
+$prim-line: #80ADFF;
+
+$sec: #F0F1F2;
+$sec-hover: #E8E8ED;
+$sec-active: #E1E5EB;
+
+$error: #FF564E;
+
+$focus-shadow: -3px 3px 0px #CBE3FF, 3px -3px 0px #CBE3FF, -3px -3px 0px #CBE3FF, 3px 3px 0px #CBE3FF;
+
+$weights: (
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);
+
+$sizes: (
+  1: 10px,
+  2: 12px,
+  3: 14px,
+  4: 16px,
+  5: 18px,
+  6: 20px,
+  7: 28px,
+  8: 32px,
+  9: 40px,
+  10: 48px,
+);
+
+$breakpoints: (
+  'mobile-s': 320px,
+  'mobile': 767px,
+  'tablet': 1024px,
+  'desktop': 1280px,
+  'large': 1440px,
+) !default;

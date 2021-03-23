@@ -1,0 +1,15 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.empty {
+  margin-top: 120px;
+
+  &__title {
+    @include fontStyle(8, medium);
+  }
+
+  &__description {
+    margin-top: 16px;
+    @include fontStyle(5, regular);
+  }
+}

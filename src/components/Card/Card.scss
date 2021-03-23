@@ -1,0 +1,166 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+$card-blue: #CCEEFF;
+$card-blue-shadow: 0px 20px 36px rgba(153, 213, 255, 0.8);
+$card-green: #CCFFCC;
+$card-green-shadow: 0px 20px 36px rgba(155, 242, 145, 0.8);
+$card-pink: #FFCCEE;
+$card-pink-shadow: 0px 20px 36px rgba(255, 153, 228, 0.8);
+$card-yellow: #FFEECB;
+$card-yellow-shadow: 0px 20px 36px rgba(255, 213, 153, 0.8);
+$card-purple: #EECCFF;
+$card-purple-shadow: 0px 20px 36px rgba(213, 152, 254, 0.8);
+$card-peach: #FFD5CC;
+$card-peach-shadow: 0px 20px 36px rgba(255, 160, 153, 0.8);
+
+.card {
+  min-height: 364px;
+  color: $base;
+  text-decoration: none;
+  padding: 48px 32px;
+  width: calc(33% - 32px);
+  @include fontStyle(7, medium);
+  @include border-radius(48px);
+  transition: $transition;
+  position: relative;
+
+  &__shadow {
+    height: 100%;
+    width: calc(100% - 64px);
+    margin: 0 32px;
+    border: 2px solid red;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include border-radius(48px);
+    transition: $transition;
+  }
+
+  &-blue {
+    background-color: $card-blue;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-blue-shadow;
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-green {
+    background-color: $card-green;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-green-shadow;
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-pink {
+    background-color: $card-pink;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-pink-shadow;
+
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-yellow {
+    background-color: $card-yellow;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-yellow-shadow;
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-purple {
+    background-color: $card-purple;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-purple-shadow;
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-peach {
+    background-color: $card-peach;
+
+    &:hover {
+
+      .card {
+
+        &__shadow {
+          box-shadow: $card-peach-shadow;
+        }
+
+        &__icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &-wrap {
+    margin-top: 48px;
+
+    & > .card {
+
+      &:nth-child(n+4) {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  &__icon {
+    opacity: 0;
+    transition: $transition;
+  }
+}

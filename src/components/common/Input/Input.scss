@@ -1,0 +1,34 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.input {
+  height: 40px;
+
+  border: 0;
+  background: 0;
+  background-color: $white;
+  padding: 8px 12px;
+  font-family: $font;
+  border: 1px solid $sec-hover;
+  transition: $transition;
+  @include border-radius(8px);
+  @include fontStyle(4, regular);
+
+  &:hover {
+    border-color: $prim-line;
+  }
+
+  &:focus {
+    border-color: $prim;
+    box-shadow: $focus-shadow;
+  }
+
+  &.error {
+    border-color: $error;
+  }
+
+  &[disabled] {
+    background-color: $sec-hover;
+    cursor: not-allowed;
+  }
+}

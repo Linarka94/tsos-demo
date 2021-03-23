@@ -1,0 +1,36 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.react-tabs {
+
+  &__tab {
+    @include fontStyle(4, medium);
+    color: $base;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-align: center;
+    //transition: $transition;
+
+    &--selected {
+      border: 0;
+      background: 0;
+      color: $prim;
+      border-bottom: 2px solid $prim;
+    }
+
+    &-list {
+      border: 0;
+      margin-bottom: 0;
+      margin-top: 24px;
+      border-bottom: 1px solid #E8E8ED;
+    }
+
+    &-panel {
+      margin-top: 24px;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+  }
+}

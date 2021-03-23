@@ -1,0 +1,138 @@
+@import '../../style/elements/vars';
+@import '../../style/elements/mixin';
+
+.faq {
+
+  & .empty {
+
+    @extend .faq__container;
+  }
+
+  &__head {
+    background-image: linear-gradient(180deg, #EDF3FF 0%, rgba(240, 246, 255, 0) 100%);
+    padding-bottom: 80px;
+
+    & .title {
+      text-align: center;
+    }
+  }
+
+  &__container {
+    max-width: 800px;
+    padding: 0;
+  }
+
+  &__form {
+    margin-top: 32px;
+  }
+
+  &__search {
+
+    .input {
+      border-radius: 8px 0px 0px 8px;
+    }
+
+    .btn {
+      border-radius: 0px 8px 8px 0px;
+    }
+  }
+
+  &__select {
+    margin-right: 8px;
+    width: 100%;
+
+    &:last-child {
+      margin-right: 0;
+      width: 388px;
+      flex-shrink: 0;
+    }
+
+    &-wrap {
+      margin-top: 16px;
+    }
+  }
+
+  &__tabs {
+    margin-top: -80px;
+
+    &-content {
+      margin-top: 24px;
+
+      & .btn {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &__acc {
+
+    &-wrap {
+      padding: 16px 0;
+      border-bottom: 1px solid $sec-hover;
+    }
+
+    &-title {
+      letter-spacing: -0.2px;
+      padding: 18px 0;
+      cursor: pointer;
+      @include fontStyle(5, medium);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: $transition;
+
+      &:hover {
+        color: $prim;
+
+        & svg path {
+          stroke: $prim;
+        }
+      }
+
+      &.active {
+        color: $prim;
+      }
+    }
+
+    &-content {
+      @include fontStyle(5, regular);
+      line-height: 1.4;
+
+      & ol {
+        margin: 0;
+        list-style-type: decimal;
+
+        & li {
+          margin-top: 12px;
+
+          & > ul {
+            list-style-type: disc;
+
+            & li {
+
+              &:not(:first-child) {
+                margin-top: 16px;
+              }
+
+              & span {
+                @include fontStyle(5, medium);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-btn {
+      margin-top: 24px;
+      padding-bottom: 64px;
+
+      & .btn {
+
+        &:first-child {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}

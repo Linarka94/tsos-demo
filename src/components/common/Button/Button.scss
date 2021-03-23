@@ -1,0 +1,53 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.btn {
+  display: inline-block;
+  border: 0;
+  background: 0;
+  cursor: pointer;
+  font-family: $font;
+  text-decoration: none;
+  text-align: center;
+  padding: 16px 24px;
+  transition: $transition;
+  letter-spacing: -0.24px;
+
+  @include border-radius(12px);
+  @include fontStyle(4, medium);
+
+  &.small {
+    padding: 8px 20px;
+    @include border-radius(8px);
+  }
+
+  &.primary {
+    color: $white;
+    background-color: $prim;
+
+    &:hover {
+      background-color: $prim-hover;
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: $focus-shadow;
+      background-color: $prim-active;
+    }
+  }
+
+  &.secondary {
+    color: $base;
+    background-color: $sec;
+
+    &:hover {
+      background-color: $sec-hover;
+    }
+
+    &:active,
+    &:focus {
+      box-shadow: $focus-shadow;
+      background-color: $sec-active;
+    }
+  }
+}

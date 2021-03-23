@@ -1,0 +1,11 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+$bg-mask: rgba(34, 34, 34, 0.2);
+
+.ant-drawer {
+
+  &-mask {
+    background-color: $bg-mask;
+  }
+}

@@ -1,0 +1,93 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+$card-blue: #CCEEFF;
+$card-green: #CCFFCC;
+$card-pink: #FFCCEE;
+$card-yellow: #FFEECB;
+$card-purple: #EECCFF;
+$card-peach: #FFD5CC;
+
+.links-item {
+
+  &__bg {
+    padding-top: 32px;
+    padding-bottom: 56px;
+
+    &-blue {
+      background-color: $card-blue;
+    }
+
+    &-green {
+      background-color: $card-green;
+    }
+
+    &-pink {
+      background-color: $card-pink;
+    }
+
+    &-yellow {
+      background-color: $card-yellow;
+    }
+
+    &-purple {
+      background-color: $card-purple;
+    }
+
+    &-peach {
+      background-color: $card-peach;
+    }
+  }
+
+  & .title {
+    margin-top: 40px;
+  }
+
+  &__form {
+    max-width: 594px;
+    margin-top: 32px;
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+
+    &-item {
+      padding-top: 8px;
+      padding-bottom: 40px;
+      border-top: 1px solid $sec-hover;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      & .link.link-small {
+        margin-top: 8px;
+      }
+
+      &-descr {
+        width: 453px;
+
+        @include fontStyle(4, regular);
+      }
+
+      &-icon {
+        width: 180px;
+
+        & img {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      &-head {
+        width: 261px;
+
+        @include fontStyle(4, medium);
+      }
+    }
+
+  }
+}

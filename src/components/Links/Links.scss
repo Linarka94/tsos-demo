@@ -1,0 +1,11 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.links {
+
+  &__description {
+    @include fontStyle(4, regular);
+    max-width: 553px;
+    margin-top: 16px;
+  }
+}

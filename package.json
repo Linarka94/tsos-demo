@@ -3,14 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
+    "antd": "^4.13.1",
+    "classnames": "^2.2.6",
+    "node-sass": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-tabs": "^3.2.0",
+    "simple-react-lightbox": "^3.6.4",
     "web-vitals": "^1.1.0"
   },
+  "homepage": "",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -34,5 +43,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-plugin-babel": "^5.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "json-server": "^0.16.3"
   }
 }

@@ -1,0 +1,275 @@
+@import "../elements/vars";
+@import "../elements/mixin";
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.5;
+  color: $base;
+  background-color: $white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 144px;
+
+  @include respond('large') {
+    max-width: 1440px;
+    padding: 0 110px;
+  }
+
+  @include respond('desktop') {
+    max-width: 1280px;
+    padding: 0 30px;
+  }
+
+  @include respond('tablet') {
+    padding: 0 24px;
+  }
+
+  @include respond('mobile') {
+    padding: 0 16px;
+  }
+}
+
+.lock {
+  overflow: hidden;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+
+  &-col {
+    flex-direction: column;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+}
+
+.just-between {
+  justify-content: space-between;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.flex-between-center {
+  @extend .flex;
+  @extend .just-between;
+  @extend .align-center;
+}
+
+.flex-center-center {
+  @extend .flex;
+  @extend .just-center;
+  @extend .align-center;
+}
+
+.breadcrumb {
+  &__link {
+    @include fontStyle(4, medium);
+    text-decoration: none;
+    color: $base;
+
+    & svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+.checkbox,
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+
+  & + label {
+    cursor: pointer;
+    transition: $transition;
+    display: flex;
+    align-items: center;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      transition: $transition;
+      width: 28px;
+      height: 28px;
+      border: 1px solid $placeholder;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+
+    &.error {
+
+      &:before {
+        border-color: $error;
+      }
+    }
+
+    &:hover {
+
+      &:before {
+        border-color: $prim-line;
+      }
+    }
+  }
+
+  &:focus + label {
+
+    &:before {
+      box-shadow: $focus-shadow;
+    }
+  }
+}
+
+.checkbox {
+
+  & + label {
+
+    &:before {
+      @include border-radius(6px);
+    }
+  }
+
+  &:checked + label {
+
+    &:before {
+      background-image: url("../../img/common/checkbox/ok.svg");
+      background-color: $prim;
+    }
+  }
+}
+
+.radio {
+
+  & + label {
+
+    &:before {
+      @include border-radius(50%);
+    }
+  }
+
+  &:checked + label {
+
+    &:before {
+      border: 2px solid $prim;
+      background-image: url("../../img/common/radio/default.svg");
+    }
+  }
+}
+
+.tag {
+  font-family: $font;
+  background-color: $sec;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  transition: $transition;
+
+  &:hover {
+    background-color: $sec-active;
+
+    & .tag-del {
+      @include opacity(1);
+    }
+  }
+
+  &-big {
+    padding: 8px 12px;
+    @include border-radius(8px);
+    @include fontStyle(4, regular);
+    text-align: center;
+  }
+
+  &-small {
+    padding: 4px 6px;
+    @include border-radius(4px);
+    @include fontStyle(3, regular);
+  }
+
+  &-del {
+    background-image: url("../../img/common/icon/sm/close.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: $transition;
+    cursor: pointer;
+    margin-left: 4px;
+    @include opacity(0.5);
+  }
+}
+
+.title {
+  @include fontStyle(8, medium);
+  letter-spacing: -0.2px;
+}
+
+.link {
+  font-family: $font;
+  @include fontStyle(5, medium);
+  color: $prim;
+  transition: $transition;
+  text-decoration: none;
+
+  &-small {
+    @include fontStyle(3, regular);
+    letter-spacing: 0.2px;
+  }
+
+  &:hover {
+    color: $prim-hover;
+  }
+
+  &:active {
+    color: $prim-active;
+  }
+}
+
+.head {
+  padding-top: 40px;
+}

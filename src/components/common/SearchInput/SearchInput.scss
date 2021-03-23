@@ -1,0 +1,64 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.search-input {
+
+  & .ant {
+
+    &-input {
+
+      &-search {
+
+        & > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button {
+          border-radius: 0 8px 8px 0;
+        }
+
+        & .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+      }
+
+      &-affix-wrapper {
+
+        &:hover {
+          border-color: $prim-line;
+        }
+
+        &:focus,
+        &-focused {
+          border-color: $prim;
+          box-shadow: $focus-shadow;
+        }
+      }
+    }
+
+    &-btn {
+
+      &-lg {
+        padding-left: 20px;
+        padding-right: 20px;
+        @include fontStyle(4, medium);
+        letter-spacing: -0.24px;
+      }
+
+      &-primary {
+        border: 0;
+        box-shadow: none;
+        text-shadow: none;
+        color: $white;
+        background: $prim;
+
+        &:hover {
+          background-color: $prim-hover;
+        }
+
+        &:active,
+        &:focus {
+          box-shadow: $focus-shadow;
+          background-color: $prim-active;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "src/style/elements/vars";
+@import "src/style/elements/mixin";
+
+.collapse-css-transition {
+  transition: height 0.3s ease;
+}
+
+.plus {
+
+  & path {
+    transition: $transition;
+    transform: scaleY(1);
+    transform-origin: 50% 50%;
+  }
+
+  &.minus {
+
+    & .vertical-line {
+      transform: scaleY(0);
+    }
+  }
+}
