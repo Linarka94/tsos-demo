@@ -22,34 +22,8 @@
     padding: 0;
   }
 
-  &__form {
+  & .search-form {
     margin-top: 32px;
-  }
-
-  &__search {
-
-    .input {
-      border-radius: 8px 0px 0px 8px;
-    }
-
-    .btn {
-      border-radius: 0px 8px 8px 0px;
-    }
-  }
-
-  &__select {
-    margin-right: 8px;
-    width: 100%;
-
-    &:last-child {
-      margin-right: 0;
-      width: 388px;
-      flex-shrink: 0;
-    }
-
-    &-wrap {
-      margin-top: 16px;
-    }
   }
 
   &__tabs {

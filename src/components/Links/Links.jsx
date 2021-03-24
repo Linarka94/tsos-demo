@@ -28,8 +28,7 @@ export default class Links extends React.Component {
 			<section className="container links">
 				<div className="head">
 					<h2 className="title">Полезные ссылки</h2>
-					<h3 className="links__description">Полезные сервисы для работы, учёбы, отдыха и не только. Добавляйте в
-						закладки: что-то точно пригодится.</h3>
+					<h3 className="links__description">Полезные сервисы для работы, учёбы, отдыха и не только. Добавляйте в закладки: что-то точно пригодится.</h3>
 				</div>
 				<div className="card-wrap flex flex-wrap just-between">
 					{this.state.links.map((item, i) => (

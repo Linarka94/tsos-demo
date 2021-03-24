@@ -2,11 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import GotService from "../services/GotService";
 import {Link} from "react-router-dom";
-import SearchInput from "../common/SearchInput/SearchInput";
 import {Pagination} from "antd";
 
 import "./LinksItem.scss";
 import "antd/lib/pagination/style/index.css";
+import SearchForm from "../common/SearchForm/SearchForm";
 
 const LinksField = (props) => {
 	const {title, site, description, icon} = props.item;
@@ -40,8 +40,6 @@ export default class LinksItem extends React.Component {
 			perPage: 5,
 			curPage: 1,
 			link: {},
-			placeholder: "Поиск",
-			size: "large",
 			linksItem: {
 				body: [],
 				totalCount: 0
@@ -83,7 +81,7 @@ export default class LinksItem extends React.Component {
 	};
 
 	render() {
-		const {placeholder, size, perPage, curPage} = this.state;
+		const {perPage, curPage} = this.state;
 		const {title, color} = this.state.link;
 		const {totalCount} = this.state.linksItem;
 
@@ -96,42 +94,7 @@ export default class LinksItem extends React.Component {
 				<div className={`links-item__bg links-item__bg-${color} container`}>
 					<Link to="/links" className="flex align-center breadcrumb__link">{arrowLeft}Полезные ссылки</Link>
 					<h2 className="title">{title}</h2>
-					<form action="/" method="get" className="links-item__form w-100">
-						<div className="faq__search">
-							<SearchInput placeholder={placeholder} size={size}/>
-						</div>
-						<div className="faq__select-wrap flex just-between">
-							<div className="faq__select">
-								<select name="obr" id="obr" className="select2" data-placeholder="Образование">
-									<option value=""/>
-									<option value="1">Среднее</option>
-									<option value="2">Высшее-бакалавр</option>
-									<option value="3">Высшее-магистр</option>
-									<option value="4">Аспирант</option>
-									<option value="5">Педагогическое</option>
-								</select>
-							</div>
-							<div className="faq__select">
-								<select name="dis" id="dis" className="select2" data-placeholder="Регион">
-									<option value=""/>
-									<option value="1">16</option>
-									<option value="2">17</option>
-									<option value="3">Татарстан</option>
-									<option value="4">РТ</option>
-								</select>
-							</div>
-							<div className="faq__select">
-								<select name="org" id="org" className="select2" data-placeholder="Образовательная организация">
-									<option value=""/>
-									<option value="1">Организация 1</option>
-									<option value="2">Организация 2</option>
-									<option value="3">Организация 3</option>
-									<option value="4">Организация 4</option>
-									<option value="5">Организация 5</option>
-								</select>
-							</div>
-						</div>
-					</form>
+					<SearchForm />
 				</div>
 				<div className="container">
 					<ul className="links-item__list">

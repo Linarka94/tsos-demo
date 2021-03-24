@@ -26,3 +26,8 @@ SearchInput.propTypes = {
 	placeholder: PropTypes.string,
 	size: PropTypes.string,
 };
+
+SearchInput.defaultProps = {
+	placeholder: "Вопрос",
+	size: "large",
+};
