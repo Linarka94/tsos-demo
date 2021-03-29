@@ -8,6 +8,8 @@ $card-yellow: #FFEECB;
 $card-purple: #EECCFF;
 $card-peach: #FFD5CC;
 
+$pagination-bg: #F0F6FF;
+
 .links-item {
 
   &__bg {
@@ -43,8 +45,8 @@ $card-peach: #FFD5CC;
     margin-top: 40px;
   }
 
-  &__form {
-    max-width: 594px;
+  & .search-form {
+    max-width: 800px;
     margin-top: 32px;
   }
 
@@ -89,5 +91,63 @@ $card-peach: #FFD5CC;
       }
     }
 
+  }
+}
+
+.ant-pagination {
+  @include fontStyle(4, medium);
+  font-family: $font;
+  display: flex;
+  align-items: center;
+
+  & > li {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    border: 0;
+    @include border-radius(8px);
+
+    & > * {
+      transition: $transition;
+    }
+  }
+
+  &-prev &-item-link,
+  &-next &-item-link {
+    border: 0;
+    color: $base;
+    @include border-radius(8px);
+
+    &:focus,
+    &:hover {
+      color: $prim;
+      background-color: $pagination-bg;
+    }
+  }
+
+  &-item {
+
+    &:focus,
+    &:hover {
+      color: $prim;
+      background-color: $pagination-bg;
+    }
+
+    &-active {
+      color: $prim;
+      background-color: $pagination-bg;
+    }
+  }
+
+  &-disabled &-item-link,
+  &-disabled:hover &-item-link,
+  &-disabled:focus &-item-link {
+    border: 0;
+    background-color: $white;
+    color: $base;
+    opacity: 0.4;
   }
 }

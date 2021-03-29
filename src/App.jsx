@@ -35,7 +35,7 @@ export default class App extends React.Component {
 		}
 
 		return (
-			<Router>
+			<Router basename={process.env.PUBLIC_URL}>
 				<ScrollToTop/>
 				<div className="app">
 					<Header/>

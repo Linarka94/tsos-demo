@@ -3,10 +3,66 @@ import PropTypes from "prop-types";
 import GotService from "../services/GotService";
 import {Link} from "react-router-dom";
 import {Pagination} from "antd";
-
-import "./LinksItem.scss";
-import "antd/lib/pagination/style/index.css";
 import SearchForm from "../common/SearchForm/SearchForm";
+
+import "antd/lib/pagination/style/index.css";
+import "./LinksItem.scss";
+
+const options = {
+	learning: [
+		{
+			value: "0", label: "Без образования"
+		},
+		{
+			value: "1", label: "Среднее"
+		},
+		{
+			value: "2", label: "Среднее специальное"
+		},
+		{
+			value: "3", label: "Высшее"
+		},
+		{
+			value: "4", label: "Два и более высших"
+		},
+	],
+	subject: [
+		{
+			value: "RT", label: "Республика Татарстан",
+		},
+		{
+			value: "RB", label: "Республика Башкортостан",
+		},
+		{
+			value: "MSK", label: "Москва",
+		},
+		{
+			value: "SPB", label: "Санкт-Петербург",
+		},
+		{
+			value: "ALT", label: "Алтай",
+		}
+	],
+	organization: [
+		{
+			value: "MPR", label: "Министерство просвещения Российской Федерации"
+		},
+		{
+			value: "MLR", label: "Министерство образования Российской Федерации"
+		},
+		{
+			value: "MSR", label: "Министерство спорта Российской Федерации"
+		},
+		{
+			value: "SCH-180", label: "Школа №180"
+		},
+		{
+			value: "SCH-G-2", label: "Гимназия №2"
+		}
+	]
+};
+
+const placeholders = ["Образование", "Субъект РФ", "Образовательная организация"];
 
 const LinksField = (props) => {
 	const {title, site, description, icon} = props.item;
@@ -94,7 +150,7 @@ export default class LinksItem extends React.Component {
 				<div className={`links-item__bg links-item__bg-${color} container`}>
 					<Link to="/links" className="flex align-center breadcrumb__link">{arrowLeft}Полезные ссылки</Link>
 					<h2 className="title">{title}</h2>
-					<SearchForm />
+					<SearchForm options={options} placeholders={placeholders} />
 				</div>
 				<div className="container">
 					<ul className="links-item__list">
@@ -102,7 +158,12 @@ export default class LinksItem extends React.Component {
 							<LinksField key={i} item={item}/>
 						))}
 					</ul>
-					<Pagination current={curPage} pageSize={perPage} total={totalCount} onChange={this.onChange}/>
+					<Pagination
+						current={curPage}
+						pageSize={perPage}
+						total={totalCount}
+						onChange={this.onChange}
+					/>
 				</div>
 			</section>
 		);

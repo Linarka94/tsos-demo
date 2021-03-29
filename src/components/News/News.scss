@@ -7,6 +7,10 @@ $news-border: #575761;
 .news {
   margin-right: 64px;
 
+  & .search-form {
+    padding-top: 32px;
+  }
+
   &__wrap {
     margin-top: 40px;
 

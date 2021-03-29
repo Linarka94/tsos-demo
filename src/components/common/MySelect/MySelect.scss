@@ -1,0 +1,33 @@
+@import '../../../style/elements/vars';
+@import '../../../style/elements/mixin';
+
+.react-select {
+
+  &__control {
+
+    &--is-focused {
+
+      & > .react-select__indicators {
+        display: none;
+      }
+    }
+  }
+
+  &__option {
+
+    &--is-selected {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 16px;
+        width: 20px;
+        height: 20px;
+        background-image: url("../../../img/common/icon/ok.svg");
+      }
+    }
+  }
+}

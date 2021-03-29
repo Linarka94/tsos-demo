@@ -5,6 +5,80 @@ import cx from "classnames";
 import GotService from "../services/GotService";
 import NewsItem from "./NewsItem";
 import Button from "../common/Button/Button";
+import SearchForm from "../common/SearchForm/SearchForm";
+
+const options = {
+	period: [
+		{
+			value: "0", label: "За сутки"
+		},
+		{
+			value: "0", label: "За неделю"
+		},
+		{
+			value: "0", label: "За месяц"
+		},
+		{
+			value: "0", label: "За год"
+		},
+		{
+			value: "0", label: "За все время"
+		}
+	],
+	learning: [
+		{
+			value: "0", label: "Без образования"
+		},
+		{
+			value: "1", label: "Среднее"
+		},
+		{
+			value: "2", label: "Среднее специальное"
+		},
+		{
+			value: "3", label: "Высшее"
+		},
+		{
+			value: "4", label: "Два и более высших"
+		},
+	],
+	subject: [
+		{
+			value: "RT", label: "Республика Татарстан",
+		},
+		{
+			value: "RB", label: "Республика Башкортостан",
+		},
+		{
+			value: "MSK", label: "Москва",
+		},
+		{
+			value: "SPB", label: "Санкт-Петербург",
+		},
+		{
+			value: "ALT", label: "Алтай",
+		}
+	],
+	organization: [
+		{
+			value: "MPR", label: "Министерство просвещения Российской Федерации"
+		},
+		{
+			value: "MLR", label: "Министерство образования Российской Федерации"
+		},
+		{
+			value: "MSR", label: "Министерство спорта Российской Федерации"
+		},
+		{
+			value: "SCH-180", label: "Школа №180"
+		},
+		{
+			value: "SCH-G-2", label: "Гимназия №2"
+		}
+	]
+};
+
+const placeholders = ["Период", "Образование", "Субъект РФ", "Образовательная организация"];
 
 export default class News extends React.Component {
 	constructor(props) {
@@ -84,50 +158,17 @@ export default class News extends React.Component {
 						</button>
 					</div>
 				</div>
-				<form action="/" method="get" className="news__form">
-					<div className="faq__select-wrap flex">
-						<div className="faq__select">
-							<select name="time" id="time" className="select2" data-placeholder="Образование">
-								<option value="31">За неделю</option>
-								<option value="12">За месяц</option>
-								<option value="2021">За год</option>
-							</select>
-						</div>
-						<div className="faq__select">
-							<select name="obr" id="obr" className="select2" data-placeholder="Образование">
-								<option value="1">Среднее</option>
-								<option value="2">Высшее-бакалавр</option>
-								<option value="3">Высшее-магистр</option>
-								<option value="4">Аспирант</option>
-								<option value="5">Педагогическое</option>
-							</select>
-						</div>
-						<div className="faq__select">
-							<select name="dis" id="dis" className="select2" data-placeholder="Регион">
-								<option value="1">16</option>
-								<option value="2">17</option>
-								<option value="3">Татарстан</option>
-								<option value="4">РТ</option>
-							</select>
-						</div>
-						<div className="faq__select">
-							<select name="org" id="org" className="select2" data-placeholder="Образовательная организация">
-								<option value="1">Организация 1</option>
-								<option value="2">Организация 2</option>
-								<option value="3">Организация 3</option>
-								<option value="4">Организация 4</option>
-								<option value="5">Организация 5</option>
-							</select>
-						</div>
-					</div>
-				</form>
+				<SearchForm
+					options={options}
+					placeholders={placeholders}
+				/>
 				<div
 					className={cx("news__wrap flex just-between align-start", {"tile": this.state.view})}
 				>
 					<div className="news">
 						<ul className="news__list">
 							{this.state.news.map((item, i) => (
-								<NewsItem key={i} data={item} />
+								<NewsItem key={i} data={item}/>
 							))}
 						</ul>
 						<Button
@@ -142,12 +183,12 @@ export default class News extends React.Component {
 						<h4 className="news__side-title">В регионах</h4>
 						<ul className="news__list">
 							{this.state.regNews.map((item, i) => (
-								<NewsItem key={i} data={item} />
+								<NewsItem key={i} data={item}/>
 							))}
 						</ul>
 					</div>
 				</div>
-				<Empty />
+				<Empty/>
 			</section>
 		);
 	}
