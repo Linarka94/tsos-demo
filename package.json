@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://linarka94.github.io/tsos-demo/",
-    "start_url": "",
+  "start_url": "",
   "dependencies": {
     "@kunukn/react-collapse": "^2.2.9",
     "@testing-library/jest-dom": "^5.11.9",

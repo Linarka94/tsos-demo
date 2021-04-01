@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, NavLink} from "react-router-dom";
 import logo from "../../../img/common/logo-header.png";
+import userLogo from "../../../img/user.svg";
 import "./Header.scss";
 import HeaderSearch from "../HeaderSearch/HeaderSearch";
 
@@ -25,6 +26,10 @@ export default class Header extends React.Component {
 						<HeaderSearch />
 						<Link to="/" className="header__login nav__link">
 							Вход
+						</Link>
+						<Link to="/" className="header__login nav__link header__user">
+							<img src={userLogo} alt="Пользователь" />
+							Ольга
 						</Link>
 					</div>
 				</div>

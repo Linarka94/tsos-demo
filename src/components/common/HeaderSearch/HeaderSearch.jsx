@@ -1,89 +1,65 @@
-import React from "react";
-import {Modal} from "antd";
+import React, {useState, useEffect, useRef} from "react";
+import cx from "classnames";
 
-import "antd/lib/modal/style/index.css";
 import "./HeaderSearch.scss";
 
 import searchIcon from "../../../img/common/icon/search.svg";
 import searchIconBlue from "../../../img/common/icon/search-bl.svg";
 import SearchInput from "../SearchInput/SearchInput";
-import Input from "../Input/Input";
 
-export default class HeaderSearch extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			visible: false,
-			placeholder: "Что будем искать?",
-			size: "large",
-		};
+const HeaderSearch = () => {
+	const [visible, setVisible] = useState(false);
 
-		this.showModal = this.showModal.bind(this);
-		this.closeModal = this.closeModal.bind(this);
-	}
+	const searchDiv = useRef();
+	const overlayDiv = useRef((() => {
+		const overlay = document.createElement("div");
+		overlay.classList.add("overlay");
 
-	showModal() {
-		this.setState({
-			visible: true,
-		});
-	}
+		return overlay;
+	})());
 
-	closeModal() {
-		this.setState({
-			visible: false
-		});
-	}
+	useEffect(() => {
+		window.addEventListener("click", outsideClick);
+	}, []);
 
-	render() {
-		const {visible, placeholder, size} = this.state;
+	const outsideClick = (e) => {
+		const target = e.target;
 
-		return (
-			<>
-				<button
-					type="button"
-					className="header__search nav__link flex align-center"
-					onClick={this.showModal}
-				>
-					<span className="header__search-icon">
-						<img src={searchIcon}/>
-					</span>
-					<span className="header__search-icon header__search-icon--blue">
-						<img src={searchIconBlue}/>
-					</span>
-					<span className="header__search-descr">Поиск</span>
-				</button>
-				<Modal
-					style={{top: 80}}
-					width={"100%"}
-					visible={visible}
-					onOk={this.closeModal}
-					onCancel={this.closeModal}
-					footer={null}
-					closable={false}
-					maskClosable
-				>
-					<SearchInput
-						placeholder={placeholder}
-						size={size}
-					/>
-					<Input
-						id={"asd"}
-						type={"text"}
-						error={"No text"}
-						label={"Please text"}
-					/>
-				</Modal>
-				{/*<Drawer*/}
-				{/*	placement={placement}*/}
-				{/*	closable={false}*/}
-				{/*	onClose={this.onClose}*/}
-				{/*	visible={visible}*/}
-				{/*	height={height} >*/}
-				{/*	<SearchInput placeholder={placeholder} size={size}/>*/}
-				{/*</Drawer>*/}
-			</>
+		if (!searchDiv.current.contains(target)) {
+			setVisible(false);
+			overlayDiv.current.remove();
+			document.body.classList.remove("lock");
+		}
+	};
 
-		);
-	}
+	return (
+		<>
+			<button
+				type="button"
+				className="header__search nav__link flex align-center"
+				onClick={(e) => {
+					e.stopPropagation();
+					setVisible(true);
+					document.body.prepend(overlayDiv.current);
+					document.body.classList.add("lock");
+				}}
+			>
+				<span className="header__search-icon">
+					<img src={searchIcon}/>
+				</span>
+				<span className="header__search-icon header__search-icon--blue">
+					<img src={searchIconBlue}/>
+				</span>
+				<span className="header__search-descr">Поиск</span>
+			</button>
+			<div
+				ref={searchDiv}
+				className={cx("header__search-modal", {"visible": visible})}
+			>
+				<SearchInput placeholder={"Что будем искать?"}/>
+			</div>
+		</>
+	);
+};
 
-}
+export default HeaderSearch;
