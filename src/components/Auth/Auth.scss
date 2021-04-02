@@ -8,9 +8,11 @@
 	margin-right: auto;
 	margin-top: 18px;
 
-	&__description {
-		margin-top: 24px;
+	& .title {
+		padding-bottom: 24px;
+	}
 
+	&__description {
 		@include fontStyle(5, regular);
 	}
 
@@ -26,6 +28,53 @@
 					margin-right: 0;
 				}
 			}
+		}
+	}
+
+	&__agree {
+		margin-top: 124px;
+		display: flex;
+		align-items: center;
+
+		&-input {
+			display: inline-block;
+
+			& .input {
+
+				&__wrapper {
+					flex-direction: row-reverse;
+				}
+
+				&__label {
+					@include fontStyle(4, regular);
+					margin-left: 8px;
+				}
+			}
+		}
+
+		& .link {
+			margin-left: 4px;
+			color: $base;
+			@include fontStyle(4, medium);
+		}
+	}
+
+	&__button {
+
+		&.btn {
+			margin-top: 28px;
+			width: 100%;
+			background-color: $prim-line;
+		}
+	}
+
+	&__error {
+		margin-top: 24px;
+
+		& .auth__description {
+			max-width: 544px;
+			margin-top: 84px;
+			padding-bottom: 24px;
 		}
 	}
 }

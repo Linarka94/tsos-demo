@@ -2,8 +2,6 @@
 @import "src/style/elements/mixin";
 
 .input {
-  height: 40px;
-
   border: 0;
   background: 0;
   background-color: $white;
@@ -30,5 +28,12 @@
   &[disabled] {
     background-color: $sec-hover;
     cursor: not-allowed;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
   }
 }

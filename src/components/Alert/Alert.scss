@@ -1,0 +1,43 @@
+@import "../../style/elements/vars";
+@import "../../style/elements/mixin";
+
+$error: #FFEFED;
+$error-border: #FCD2CA;
+$warning: #FFF5DE;
+$warning-border: #FCE4B0;
+$info: #F0F6FF;
+$info-border: #E1EBFA;
+$success: #F5EDFE;
+$success-border: #D3B6F9;
+
+.alert {
+	display: flex;
+	align-items: flex-start;
+	padding: 16px;
+	@include fontStyle(4, regular);
+	border-radius: 6px;
+
+	& img {
+		margin-right: 18px;
+	}
+
+	&.error {
+		background-color: $error;
+		border: 1px solid $error-border;
+	}
+
+	&.warning {
+		background-color: $warning;
+		border: 1px solid $warning-border;
+	}
+
+	&.success {
+		background-color: $success;
+		border: 1px solid $success-border;
+	}
+
+	&.info {
+		background-color: $info;
+		border: 1px solid $info-border;
+	}
+}
