@@ -1,0 +1,31 @@
+@import "../../style/elements/vars";
+@import "../../style/elements/mixin";
+
+
+.auth {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 18px;
+
+	&__description {
+		margin-top: 24px;
+
+		@include fontStyle(5, regular);
+	}
+
+	&__input {
+
+		&-wrap {
+			margin-top: 56px;
+
+			& .auth__input {
+				margin-right: 16px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

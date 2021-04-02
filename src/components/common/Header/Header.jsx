@@ -24,8 +24,8 @@ export default class Header extends React.Component {
 					</nav>
 					<div className="flex align-center">
 						<HeaderSearch />
-						<Link to="/" className="header__login nav__link">
-							Вход
+						<Link to="/login" className="header__login nav__link">
+							Вход/Регистрация
 						</Link>
 						<Link to="/" className="header__login nav__link header__user">
 							<img src={userLogo} alt="Пользователь" />

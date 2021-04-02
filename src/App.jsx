@@ -14,6 +14,7 @@ import Footer from "./components/common/Footer/Footer";
 import FaqItem from "./components/Faq/FaqItem";
 import LinksItem from "./components/Links/LinksItem";
 import NewsDetail from "./components/News/NewsDetail";
+import Auth from "./components/Auth/Auth";
 
 
 export default class App extends React.Component {
@@ -40,6 +41,7 @@ export default class App extends React.Component {
 				<div className="app">
 					<Header/>
 					<Switch>
+						<Route path="/login" component={Auth} />
 						<Route exact path="/" component={Main}/>
 						<Route path="/library" component={Lib}/>
 						<Route exact path="/news" component={News}/>
