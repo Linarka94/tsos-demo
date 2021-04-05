@@ -2,7 +2,7 @@
   "name": "coc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
+  "homepage": "/",
   "start_url": "",
   "dependencies": {
     "@kunukn/react-collapse": "^2.2.9",
