@@ -10,19 +10,19 @@ import SearchForm from "../common/SearchForm/SearchForm";
 const options = {
 	period: [
 		{
-			value: "0", label: "За сутки"
+			value: "day", label: "За сутки"
 		},
 		{
-			value: "0", label: "За неделю"
+			value: "week", label: "За неделю"
 		},
 		{
-			value: "0", label: "За месяц"
+			value: "month", label: "За месяц"
 		},
 		{
-			value: "0", label: "За год"
+			value: "year", label: "За год"
 		},
 		{
-			value: "0", label: "За все время"
+			value: "alltime", label: "За все время"
 		}
 	],
 	learning: [
