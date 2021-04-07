@@ -51,7 +51,7 @@ const Header = () => {
 							<div className="header__user-links">
 								<a href="">Личный кабинет</a>
 								<span>Другие роли</span>
-								<a href="">Педагог</a>
+								<a href="/admin">Контент</a>
 							</div>
 							<a href="">Выйти</a>
 						</div>

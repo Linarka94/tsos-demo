@@ -41,7 +41,7 @@ export default class App extends React.Component {
 				<div className="app">
 					<Header/>
 					<Switch>
-						<Route path="/login" component={Auth} />
+						<Route path="/login" component={Auth}/>
 						<Route exact path="/" component={Main}/>
 						<Route path="/library" component={Lib}/>
 						<Route exact path="/news" component={News}/>

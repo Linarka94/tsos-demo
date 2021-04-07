@@ -6,6 +6,8 @@
   "start_url": "",
   "dependencies": {
     "@kunukn/react-collapse": "^2.2.9",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/data-grid": "^4.0.0-alpha.24",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.1",
